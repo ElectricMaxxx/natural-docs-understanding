@@ -1,0 +1,119 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "belittling_text",
+        "entities": [
+          {
+            "start": 10,
+            "end": 16,
+            "value": "simply",
+            "entity": "vocabulary"
+          }
+        ],
+        "text": "You sould simply run."
+      },
+      {
+        "intent": "belittling_text",
+        "entities": [
+          {
+            "start": 12,
+            "end": 16,
+            "value": "easy",
+            "entity": "vocabulary"
+          }
+        ],
+        "text": "It is quite easy to do."
+      },
+      {
+        "intent": "belittling_text",
+        "text": "You should [just] install."
+      },
+      {
+        "intent": "belittling_text",
+        "entities": [
+          {
+            "start": 2,
+            "end": 7,
+            "value": "quick",
+            "entity": "vocabulary"
+          },
+          {
+            "start": 20,
+            "end": 28,
+            "value": "is clear",
+            "entity": "vocabulary"
+          }
+        ],
+        "text": "A quick look and it is clear"
+      },
+      {
+        "intent": "belittling_text",
+        "entities": [
+          {
+            "start": 0,
+            "end": 6,
+            "value": "simply",
+            "entity": "vocabulary"
+          }
+        ],
+        "text": "simply use a"
+      },
+      {
+        "intent": "belittling_text",
+        "entities": [
+          {
+            "start": 6,
+            "end": 11,
+            "value": "quite",
+            "entity": "vocabulary"
+          }
+        ],
+        "text": "it is quite"
+      },
+      {
+        "intent": "belittling_text",
+        "text": "it is a [trivial] task to do"
+      },
+      {
+        "intent": "belittling_text",
+        "entities": [
+          {
+            "start": 7,
+            "end": 13,
+            "value": "simply",
+            "entity": "vocabulary"
+          }
+        ],
+        "text": "If you simply want to use"
+      }
+    ],
+    "regex_features": [
+      {
+        "name": "vocabulary",
+        "pattern": "(simply|simple|just|easy|easily|quick|of  course|logically|clearly|obviously|merely|basically|trivial)"
+      }
+    ],
+    "lookup_tables": [
+      {
+        "name": "vocabulary",
+        "elements": [
+          "simply",
+          "simple",
+          "just",
+          "easy",
+          "easily",
+          "quick",
+          "\"of  course\"",
+          "logically",
+          "clearly",
+          "obviously",
+          "merely",
+          "basically",
+          "trivial"
+        ]
+      }
+    ],
+    "entity_synonyms": []
+  }
+}

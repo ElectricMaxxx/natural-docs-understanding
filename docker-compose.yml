@@ -1,0 +1,34 @@
+version: "3"
+services:
+  nlu:
+      image: rasa/rasa_nlu:latest-full
+      container_name: parsing-docs-nlu
+      networks: ['rasa-network']
+      ports: 
+      - 50000:5000
+      volumes:
+      - ./app/projects:/app/projects
+      - ./app/logs:/app/logs
+      - ./app/data:/app/data
+      - ./app/models:/app/models
+      environment: 
+       RASA_SERVER_MODEL_DIRS: /app/models
+  duckling:
+      image: rasa/duckling:latest
+      networks: ['rasa-network']
+      container_name: rasa-nlu-duckling
+      ports:
+      - "9000:8000"
+  app:
+      image: registry.gitlab.com/electricmaxxx/php-meets-nlu/alpine-php7.2-builder:1.0.0
+      container_name: rasa-nlu-client
+      networks: ['rasa-network']
+      environment: 
+        APP_ENV: dev
+      volumes: 
+        - ./client-app/:/app/src/
+        - ./docs/:/data/docs/
+        - ./app/data/:/data/data/
+
+
+networks: {rasa-network: {}}
